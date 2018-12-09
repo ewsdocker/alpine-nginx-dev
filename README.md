@@ -37,12 +37,16 @@ The installation documentation for [ewsdocker/alpine-nginx]() shows 2 different 
 
 ____  
 
+First, an internal network bridge needs to be created
+
+    docker network create -d bridge --subnet=172.33.0.0/16 devnet
+
 The following _docker run_ command will create and start _alpine-nginx-dev_ service container :
 
     docker run -d \
            --restart unless-stopped \
-           -v ${HOME}/Development:/html \
-           --network=devnet \
+           -p 80:80 \
+           -v ${HOME}/Development:/usr/share/nginx/html \
            --name=alpine-nginx-dev \
        ewsdocker/alpine-nginx-dev:3.8.0  
   
