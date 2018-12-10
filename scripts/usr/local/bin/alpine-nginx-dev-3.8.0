@@ -38,8 +38,7 @@
 
 docker run -d \
            --restart unless-stopped \
-           --network=pkgnet \
-           --mount source=pkgcache,target=/usr/share/nginx/html \
+           -v ${HOME}/Development:/usr/share/nginx/html \
            --name=alpine-nginx-dev \
        ewsdocker/alpine-nginx-dev:3.8.0  
 

@@ -1,7 +1,7 @@
 ### ewsdocker/alpine-nginx-dev:3.8.0  
 A **NGINX HHTP** Web server image based on [ewsdocker/alpine-nginx](https://github.com/ewsdocker/alpine-nginx).  
 
-**alpine-nginx-dev** provides a simple NGINX HTTP server which can be anchored at any location to server the HTML content found there.  It's main purpose is to serve a GitHub web document as it is being developed.
+A simple, small footprint HTML development tool. **alpine-nginx-dev** provides a simple NGINX HTTP server which can be anchored at any location to serve the HTML content found there.  It's main purpose is to serve a GitHub web document as it is being developed.
 
 ____  
 **Visit the [ewsdocker/alpine-nginx-dev](https://github.com/ewsdocker/alpine-nginx-dev/wiki) Wiki for complete documentation.**  
@@ -37,15 +37,10 @@ The installation documentation for [ewsdocker/alpine-nginx]() shows 2 different 
 
 ____  
 
-First, an internal network bridge needs to be created
-
-    docker network create -d bridge --subnet=172.33.0.0/16 devnet
-
-The following _docker run_ command will create and start _alpine-nginx-dev_ service container :
+The following _docker run_ command will create and start _alpine-nginx-dev_ service container:
 
     docker run -d \
            --restart unless-stopped \
-           -p 80:80 \
            -v ${HOME}/Development:/usr/share/nginx/html \
            --name=alpine-nginx-dev \
        ewsdocker/alpine-nginx-dev:3.8.0  
