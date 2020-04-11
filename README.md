@@ -41,10 +41,19 @@ The following _docker run_ command will create and start _alpine-nginx-dev_ serv
 
     docker run -d \
            --restart unless-stopped \
-           -v ${HOME}/Development:/usr/share/nginx/html \
+           -v /home/jay/Development/ewsldc/ldc-framework/docs:/usr/share/nginx/html \
            --name=alpine-nginx-dev \
        ewsdocker/alpine-nginx-dev:3.8.0  
   
+____  
+
+**Building the server**
+
+
+    docker build \  
+           --file Dockerfile \  
+           -t ewsdocker/alpine-nginx-dev:3.8.0 .  
+
 ____  
 
 The **ewsdocker/alpine-nginx-dev** docker image is based on the latest [ewsdocker/alpine-nginx](https://github.com/ewsdocker/alpine-nginx/wiki) docker image.  
