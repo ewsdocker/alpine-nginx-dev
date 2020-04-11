@@ -1,4 +1,4 @@
-### ewsdocker/alpine-nginx-dev:3.8.0  
+### ewsdocker/alpine-nginx-dev:3.10.0  
 A **NGINX HHTP** Web server image based on [ewsdocker/alpine-nginx](https://github.com/ewsdocker/alpine-nginx).  
 
 A simple, small footprint HTML development tool. **alpine-nginx-dev** provides a simple NGINX HTTP server which can be anchored at any location to serve the HTML content found there.  It's main purpose is to serve a GitHub web document as it is being developed.
@@ -13,16 +13,16 @@ The following script will download the selected **ewsdocker/alpine-nginx-dev** i
 
 The _default_ values will install all directories and contents in the **docker host** user's home directory.  
 
-**ewsdocker/alpine-nginx-dev:3.8.0**
+**ewsdocker/alpine-nginx-dev:3.10.0**
   
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/alpine-nginx-dev-3.8.0:/root \
+               -v ${HOME}/.config/docker/alpine-nginx-dev-3.10.0:/root \
                --name=alpine-nginx-dev \
-           ewsdocker/alpine-nginx-dev:3.8.0 lms-setup-alpine  
+           ewsdocker/alpine-nginx-dev:3.10.0 lms-setup-alpine  
 
 ____  
 
@@ -43,7 +43,7 @@ The following _docker run_ command will create and start _alpine-nginx-dev_ serv
            --restart unless-stopped \
            -v /home/jay/Development/ewsldc/ldc-framework/docs:/usr/share/nginx/html \
            --name=alpine-nginx-dev \
-       ewsdocker/alpine-nginx-dev:3.8.0  
+       ewsdocker/alpine-nginx-dev:3.10.0  
   
 ____  
 
@@ -52,7 +52,7 @@ ____
 
     docker build \  
            --file Dockerfile \  
-           -t ewsdocker/alpine-nginx-dev:3.8.0 .  
+           -t ewsdocker/alpine-nginx-dev:3.10.0 .  
 
 ____  
 
